@@ -1,48 +1,61 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.default')
 
-        <title>Laravel</title>
+@section('content')
+<div class="container">
+        
 
-     <h1>Formations/Stages</h1>
-    </head>
-      <section>
+
+        <h1 class="text-left">@lang('Dashboard')</h1> <br>
+  <div class="row">
+          <div class="col-auto mr-auto">
+            <div class="btn">
+              
+              <a class="btn btn-sm btn-primary" href="" role="button">@lang('Ajouter new post')</a>
+              
+            </div>
+          </div>
           
-  <h1>Articles</h1>
-    
-  <article>
-      <article>
-  <h1>Titre de l'article</h1>
-  <p>Contenu de l'article</p>
-</article>
-  </article>
-
-
-      </section>
-
-
-
-      <aside>
           
-             <h4>Sources de l'article</h4>
-  <ul>
-    <li><a href="#">Lien 1</a></li>
-    <li><a href="#">Lien 2</a></li>
-    <li><a href="#">Lien 3</a></li>
-  </ul>
+  </div>
 
-  <div class="btn col-md-5 ml-auto">
-          <label for="user" class="control-label small sr-only">@lang('Utilisateur')</label>
-          <input id="user" type="text" class="form-control mb-2 mr-sm-2" name="user" value="" placeholder="Utilsateur" autofocus>
-        </div> 
-        <button type="button" class="btn btn-md btn-primary" title="@lang('Search')" >
-          <button></button>
 
-      </aside>
+ <table class="table table-bordered table-hover table-sm">
+          <thead class="thead-dark">
+            <tr>
+                    <th scope="col" class="col-auto small">@lang('titre')</th>
+                     <th scope="col" class="col-auto small">@lang('durée')</th>
+                     <th scope="col" class="col-auto small">@lang('date')</th>
+                     <th scope="col" class="col-auto small">@lang('prix')</th>  
+                     <th scope="col" class="col-auto small">@lang('Contenu')</th>
+                     <th scope="col" class="col-auto small">@lang('statut')</th>
+                     <th scope="col" class="col-auto small">@lang('Lien vidéo')</th>                   
+                     
+                     
+            </tr>
+            <tbody>
+               
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>modifier</td>
+                <td>supprimer</td>
+                
+                                
+              </tr>
 
-      <footer></footer>
-    </body>
-</html>
+
+            </tbody>                
+            </thead>
+</table> 
+
+
+
+       
+</div>
+@include('layouts.partials._footer')
+@endsection
