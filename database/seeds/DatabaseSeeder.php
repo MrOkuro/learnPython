@@ -33,13 +33,11 @@ class DatabaseSeeder extends Seeder
 
         DB::table('medias')->insert([
             'title' => 'image1.jpg',
-            'dimension' => '140',
             'link_image' => 'C/O https://placeholder.com/',
         ]);
 
         DB::table('medias')->insert([
             'title' => 'image2.jpg',
-            'dimension' => '140',
             'link_image' => 'C/O https://placeholder.com/',
         ]);
 
@@ -85,6 +83,44 @@ class DatabaseSeeder extends Seeder
             'name' => 'Perfectionnement',
             
         ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 1,
+            'name' => 'Introduction',
+        
+        ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 1,
+            'name' => 'Structure de données',
+        
+        ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 1,
+            'name' => 'Classes',
+        
+        ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 2,
+            'name' => 'Lambda',
+            
+        ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 2,
+            'name' => 'Compréhension de liste',
+            
+        ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 2,
+            'name' => 'Décorateur',
+            
+        ]);
+
+
 
 
         DB::table('categorie_post')->insert([

@@ -29,11 +29,28 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 	$this->get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 	$this->post('/register', 'Auth\RegisterController@register');
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
 
 
-//Route::get('/', 'PostsController@index')->name('post.index');
+Route::get('/', function () {
+return view('layouts.default');
+});
+
+
+//Route pour dashbord
+Route::get('/admin', 'Admin\PostsController@index')->name('admin.index');
+
+//Route pour les posts
 Route::get('/post', 'PostsController@index')->name('post.index');
+Route::get('/post/detail/','PostsController@show')->name('post.detail');
+
+
+//route pour les catégories
+//Route::get('/categories','CategoriesController@index')->name('categorie.index');
+Route::get('/categories/','CategoriesController@show')->name('categorie.index');
+Route::get('/categories/souscategorie/{id}','CategoriesController@showsouscategorie')->name('categorie.index');
