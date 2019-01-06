@@ -16,7 +16,15 @@ class CategoriesController extends Controller
 
     public function show()
     {
-    	$categories = Categorie::all();
+    	$categories = Categorie::whereNull('parent_id')->get();
     	return view('categories.index', compact('categories'));
+    }
+
+
+
+    public function showsouscategorie($id)
+    {
+        $categories = Categorie::where('parent_id',"=",$id)->get();
+        return view('categories.partials._souscategorie', compact('categories'));
     }
 }

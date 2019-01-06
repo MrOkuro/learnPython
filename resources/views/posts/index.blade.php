@@ -6,31 +6,8 @@
 
 
 		    <h1 class="text-left">@lang('Accueil')</h1> <br>
-	<div class="row">
-		      <div class="col-auto mr-auto">
-		        <div class="btn">
-		          <a class="btn btn-sm btn-primary" href="" role="button">@lang('Home')</a> 
-		          <a class="btn btn-sm btn-primary" href="" role="button">@lang('Initiation')</a> 
-		          <a class="btn btn-sm btn-primary" href="" role="button">@lang('Perfection')</a>          
-		          <a class="btn btn-sm btn-primary" href="" role="button">@lang('Qui sommes nous?')</a> 
-		          <a class="btn btn-sm btn-primary" href="" role="button">@lang('Admin')</a>
-		          
-		        </div>
-		      </div>
-		      
-		      <div class="col-auto">
-		        <form class="form-inline" method="POST" action="">
-		          
-		          <div class="form-group mx-sm-3 mb-2">
-		            <input id="search" type="text" class="form-control" name="search" value="" placeholder="Recherche" autofocus>
-		          </div>
-		          <button type="submit" class="btn btn-primary mb-2" title="@lang('Search')" >
-		            <i class="fas fa-search"></i>
-		          </button> 
-		        </form>
-		      </div>
-	</div>
 
+@include('layouts.partials._header')
 
 	<!-- <div class="form-row form-group">
                         
@@ -81,6 +58,18 @@
 			    <a class="btn btn-sm btn-success" href="" role="button">@lang('Voir la vidéo') </a>
 			  </div>
 		</div>
+
+ @foreach ($posts as $post)
+		<div class="card bg-dark text-white text-center ">
+			  <img class="card-img" src="{{url('images', 'image1.png') }}" style="width:894px;height:270px"; alt="Card image">
+			  <div class="card-img-overlay">
+			    <h5 class="card-title">{{ $post->title }} </h5>
+			    <p class="card-text">{{ $post->title }}</p>
+			    <p class="card-text">Last updated 3 mins ago</p>
+			    <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir la vidéo') </a>
+			  </div>
+		</div>
+ @endforeach
 
 
 </div>

@@ -54,6 +54,41 @@
 </table> 
 
 
+ <table class="table table-bordered table-hover table-sm">
+          <thead class="thead-dark">
+            <tr>
+                    <th scope="col" class="col-auto small">@lang('titre')</th>
+                     <th scope="col" class="col-auto small">@lang('durée')</th>
+                     <th scope="col" class="col-auto small">@lang('date')</th>
+                     <th scope="col" class="col-auto small">@lang('prix')</th>  
+                     <th scope="col" class="col-auto small">@lang('Contenu')</th>
+                     <th scope="col" class="col-auto small">@lang('statut')</th>
+                     <th scope="col" class="col-auto small">@lang('Lien vidéo')</th>                   
+                     
+                     
+            </tr>
+            <tbody>
+            @foreach ($posts as $post)   
+              <tr>
+                <td>{{ $post->title }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>modifier</td>
+                <td>supprimer</td>
+                
+                                
+              </tr>
+            @endforeach
+
+            </tbody>                
+            </thead>
+</table> 
+
+
 
        
 </div>
