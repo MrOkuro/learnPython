@@ -44,6 +44,9 @@ return view('layouts.default');
 
 //Route pour dashbord
 Route::get('/admin', 'Admin\PostsController@index')->name('admin.index');
+Route::get('/admin/create', 'Admin\PostsController@create')->name('admin.create');
+Route::post('/admin/store', 'Admin\PostsController@store')->name('admin.store');
+
 
 //Route pour les posts
 Route::get('/post', 'PostsController@index')->name('post.index');

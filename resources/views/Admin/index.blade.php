@@ -10,7 +10,7 @@
           <div class="col-auto mr-auto">
             <div class="btn">
               
-              <a class="btn btn-sm btn-primary" href="" role="button">@lang('Ajouter new post')</a>
+              <a class="btn btn-sm btn-primary" href="{{ route('admin.create') }}" role="button">@lang('Ajouter new post')</a>
               
             </div>
           </div>

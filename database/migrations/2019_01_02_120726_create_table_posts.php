@@ -15,15 +15,15 @@ class CreateTablePosts extends Migration
     {
         Schema::create('posts', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('media_id');
-            $table->enum('post_type',['video', 'post']);
-            $table->string('title');
-            $table->smallinteger('duration');
-            $table->datetime('date');
-            $table->float('price')->default($value = '0');
-            $table->text('content');
-            $table->enum('statut',['open', 'close']);
-            $table->string('link_video');
+            $table->integer('media_id')->nullable();
+            $table->enum('post_type',['video', 'post'])->nullable();
+            $table->string('title')->nullable();
+            $table->smallinteger('duration')->nullable();
+            $table->datetime('date')->nullable();
+            $table->float('price')->default($value = '0')->nullable();
+            $table->text('content')->nullable();
+            $table->enum('statut',['open', 'close'])->nullable();
+            $table->string('link_video')->nullable();
         });
 
 

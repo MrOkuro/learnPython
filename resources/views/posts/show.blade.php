@@ -22,7 +22,36 @@
                             </div>                           
 	</div> -->
 
+
+
+
 <div class="form-row form-group">
+
+
+
+<nav id="navbar-example3" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="nav nav-pills flex-column">
+    <a class="nav-link" href="#item-1">Item 1</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+      <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+    </nav>
+   
+  </nav>
+</nav>
+
+<div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+  <h4 id="item-1">Item 1</h4>
+  <p>...</p>
+  <h5 id="item-1-1">Item 1-1</h5>
+  <p>...</p>
+  <h5 id="item-1-2">Item 1-2</h5>
+  <p>...</p>
+ 
+  <p>...</p>
+</div>
+
 
 		<div class="card bg-dark text-white text-center ">
 			   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mAGyQ5Rmz7o" style="width:600px;height:400px"; allowfullscreen></iframe>
