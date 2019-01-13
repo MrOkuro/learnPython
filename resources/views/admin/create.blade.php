@@ -4,7 +4,7 @@
 
 
 <div class="container py-1">
-    <form class="form-horizontal" method="POST" action="">
+    <form class="form-horizontal" method="POST" action="{{ route('post.store') }}">
         {{ csrf_field() }}
         <!--<div class="form-group">
             <div class="col-md-3">
@@ -66,9 +66,9 @@
 
 
         <div class="col-md-3">
-            <label for="etat" class="control-label font-weight-bold">@lang('Catégories')</label>
+            <label for="categorie_id" class="control-label font-weight-bold">@lang('Catégories')</label>
             <select id="categorie_id" class="form-control {{ $errors->has('categorie_id') ? 'is-invalid' : '' }}" name="categorie_id">
-                <option value=""> Liste état </option>
+                <option value=""> Liste catégories </option>
                 @foreach ($categories as $categorie)
                     <option value="{{ $categorie->id }}" {{ (old('categorie_id') == $categorie->id)? 'selected' : '' }} > {{ $categorie->name}} </option>
                 @endforeach 
@@ -77,21 +77,24 @@
                 <div class="help-block text-danger font-italic"></div>
             @endif
         </div>
+
+
+		 <div class="col-md-3">
+                <label for="date_relance" class="control-label font-weight-bold">@lang('Date de relance')</label>
+                <input id="date_relance" type="date" class="form-control {{ $errors->has('date_relance') ? 'is-invalid' : '' }} " name="date_relance" value="{{ date('Y-m-d') }}" placeholder="Date de relance" autofocus>
+                @if ($errors->has('date_relance'))
+                    <div class="help-block text-danger font-italic"></div>
+                @endif
 </div>
-           
-            
-           
-        
 
 
-       
-            
 
-        
-        <div class="form-group">
+
+</div>         
+      <div class="form-group">
             <div class="col-md-8 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">
-                    @lang('Créer la Demande')
+                    @lang('Créer le Post')
                 </button>
                 <a class="btn btn-primary" href="{{ url()->previous()}}" role="button">@lang('Annuler')</a>
             </div>

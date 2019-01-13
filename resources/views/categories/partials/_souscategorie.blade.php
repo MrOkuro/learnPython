@@ -1,5 +1,5 @@
-kn fjdn oqefnbngrjbngrjn
 
+<div class="contentcard">
 	@foreach($categories as $categorie)
 		  <div class="card cardstyle">
 				    <img class="card-img-top" src="{{url('images', 'image2.jpg') }}" style="width:300px;height:300px"; alt="Card image cap">
@@ -14,3 +14,4 @@ kn fjdn oqefnbngrjbngrjn
 				    </div>
 		  </div>
 @endforeach	
+</div>

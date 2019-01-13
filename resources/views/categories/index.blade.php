@@ -68,9 +68,9 @@
 		  </div>
 @endforeach	
 </div>
+<br><br><br><br><br><br>
 
-
-<section id="souscategorie" class="contentcard">    
+<section id="souscategorie">    
 
 </section>
 

@@ -10,7 +10,7 @@
           <div class="col-auto mr-auto">
             <div class="btn">
               
-              <a class="btn btn-sm btn-primary" href="{{ route('admin.create') }}" role="button">@lang('Ajouter new post')</a>
+              <a class="btn btn-sm btn-primary" href="{{ route('post.create') }}" role="button">@lang('Ajouter new post')</a>
               
             </div>
           </div>
@@ -77,7 +77,10 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>modifier</td>
+                <td> 
+                    <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">
+                                @lang('Modifier opération')
+                            </button></td>
                 <td>supprimer</td>
                 
                                 
@@ -89,6 +92,9 @@
 </table> 
 
 
+<section id="form_update" class="contentcard">    
+
+</section>
 
        
 </div>
