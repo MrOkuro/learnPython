@@ -44,13 +44,19 @@ return view('layouts.default');
 
 //Route pour dashbord
 Route::get('/admin', 'Admin\PostsController@index')->name('admin.index');
+Route::get('/admin/create', 'Admin\PostsController@create')->name('post.create');
+Route::post('/admin/store', 'Admin\PostsController@store')->name('post.store');
+Route::put('/admin/{post}', 'Admin\PostsController@update')->name('post.update');
+Route::get('/admin/form/update/{id}','Admin\PostsController@form_update')->name('post.form_update');
+
 
 //Route pour les posts
 Route::get('/post', 'PostsController@index')->name('post.index');
-Route::get('/post/detail/','PostsController@show')->name('post.detail');
+Route::get('/post/{post}/','PostsController@show')->name('post.show');
 
 
 //route pour les catégories
 //Route::get('/categories','CategoriesController@index')->name('categorie.index');
 Route::get('/categories/','CategoriesController@show')->name('categorie.index');
-Route::get('/categories/souscategorie/{id}','CategoriesController@showsouscategorie')->name('categorie.index');
+Route::get('/categories/{id}','CategoriesController@showsouscategorie')->name('categorie.souscategorie');
+Route::get('/categories/{id}/liste','CategoriesController@showliste')->name('categorie.liste');

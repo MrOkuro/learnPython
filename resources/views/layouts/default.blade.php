@@ -29,7 +29,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/post') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -69,6 +69,17 @@
                         @endguest
                     </ul>
                 </div>
+
+    @if(session()->has('alert'))
+                        <div class="container py-1">
+                            <div class="alert alert-{!! session('alert')['class'] !!} alert-dismissible fade show" role="alert">
+                                {!! session('alert')['message'] !!}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                        </div>
+    @endif
             </div>
         </nav>
 
@@ -77,6 +88,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/souscategorie.js') }}" defer></script>
 
     
 </body>
