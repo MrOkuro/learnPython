@@ -34,6 +34,6 @@ class CategoriesController extends Controller
     {
         $posts = Post::where('categorie_id','=',$categorie_id)->with(['categorie_post'])->get();
         //$categories = Categorie::where('parent_id',"=",$id)->get();
-        return view('categories.liste', compact('categories'));
+        return view('categories.liste', compact('posts'));
     }
 }

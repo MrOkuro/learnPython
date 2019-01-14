@@ -42,26 +42,28 @@
                 @endif
             </div>
 
-           	<div class="form-group col-md-3">
-			<label for="statut" class="control-label font-weight-bold">@lang('Statut')</label>
-			<div class="form-check">
-					  <input class="form-check-input" type="radio" name="statut" id="exampleRadios1" value="open" checked>
-					  <label class="form-check-label" for="exampleRadios1">
-					   Open
-					  </label>
-			</div>
-			<div class="form-check">
-					  <input class="form-check-input" type="radio" name="statut" id="exampleRadios2" value="close">
-					  <label class="form-check-label" for="exampleRadios2">
-					    Close
-					  </label>
-			</div>
-			@if ($errors->has('statut'))
-				<div class="help-block text-danger font-italic">{{ $errors->first('statut') }}</div>
-			@endif
-</div>
 
-           
+            <div class="col-md-3">
+                <label for="price" class="control-label font-weight-bold">@lang('Prix')</label>
+                <input id="price" type="text" class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }} " name="price" value="{{ old('price') }}" placeholder="prix" autofocus>
+                @if ($errors->has('price'))
+                    <div class="help-block text-danger font-italic"></div>
+                @endif
+            </div>
+
+
+             <div class="col-md-3">
+                <label for="content" class="control-label font-weight-bold">@lang('Contenu')</label>
+                <input id="content" type="text" class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }} " name="content" value="{{ old('content') }}" placeholder="contenu" autofocus>
+                @if ($errors->has('content'))
+                    <div class="help-block text-danger font-italic"></div>
+                @endif
+            </div>
+
+            <div class="col-md-3">
+                        <label for="avatar">Choix image:</label>
+                        <input type="file" id="" name="" accept="image/png, image/jpeg">
+            </div>           
         
 
 
@@ -85,7 +87,46 @@
                 @if ($errors->has('date_relance'))
                     <div class="help-block text-danger font-italic"></div>
                 @endif
-</div>
+        </div>
+
+
+            <div class="form-group col-md-3">
+                        <label for="statut" class="control-label font-weight-bold">@lang('Statut')</label>
+                        <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="statut" id="open" value="open" checked>
+                                  <label class="form-check-label" for="exampleRadios1">
+                                   Open
+                                  </label>
+                        </div>
+                        <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="statut" id="close" value="close">
+                                  <label class="form-check-label" for="exampleRadios2">
+                                    Close
+                                  </label>
+                        </div>
+                        @if ($errors->has('statut'))
+                            <div class="help-block text-danger font-italic">{{ $errors->first('statut') }}</div>
+                        @endif
+            </div>
+
+            <div class="form-group col-md-3">
+                        <label for="statut" class="control-label font-weight-bold">@lang('Post Type')</label>
+                        <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="post_type" id="post" value="post" checked>
+                                  <label class="form-check-label" for="exampleRadios1">
+                                   Open
+                                  </label>
+                        </div>
+                        <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="post_type" id="video" value="video">
+                                  <label class="form-check-label" for="exampleRadios2">
+                                    Close
+                                  </label>
+                        </div>
+                        @if ($errors->has('post_type'))
+                            <div class="help-block text-danger font-italic">{{ $errors->first('post_type') }}</div>
+                        @endif
+            </div>
 
 
 

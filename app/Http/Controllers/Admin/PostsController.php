@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Request\PostRequest;
+use Illuminate\Http\Requests\PostRequest;
 use App\Http\Controllers\Admin\Post;
 use App\Http\Controllers\Admin\Media;
 use App\Http\Controllers\Admin\Categorie;
@@ -34,8 +34,9 @@ class PostsController extends Controller
         $post->duration = $request->duration;
         $post->title = $request->title;
         $post->date = $request->date;
-        //$post->price = $request->price;
-        //$post->content = $request->content;
+        $post->price = $request->price;
+        $post->content = $request->content;
+        $post->link_video = $request->link_video;
         //$post->statut = $request->statut;
         //
         //$post->categorie_post->categorie_id = $request->categorie_id;
