@@ -13,11 +13,11 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-       /* if(auth()->check())
-        {
+        //if(auth()->check())
+        //{
             return true;
-        }
-        return false; */
+        //}
+        //return false; 
     }
 
     /**

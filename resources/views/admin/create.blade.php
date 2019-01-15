@@ -6,15 +6,7 @@
 <div class="container py-1">
     <form class="form-horizontal" method="POST" action="{{ route('post.store') }}">
         {{ csrf_field() }}
-        <!--<div class="form-group">
-            <div class="col-md-3">
-                <label for="ref_demande" class="control-label font-weight-bold">@lang('Référence de la demande')</label>
-                <input id="ref_demande" type="text" class="form-control {{ $errors->has('ref_demande') ? 'is-invalid' : '' }} " name="ref_demande" value="{{ old('ref_demande') }}" placeholder="Demande DXXXX" autofocus disabled>
-                @if ($errors->has('ref_demande'))
-                    <div class="help-block text-danger font-italic"></div>
-                @endif
-            </div>
-        </div> -->
+
 
 <div class="form-row form-group">
          
@@ -81,13 +73,7 @@
         </div>
 
 
-		 <div class="col-md-3">
-                <label for="date_relance" class="control-label font-weight-bold">@lang('Date de relance')</label>
-                <input id="date_relance" type="date" class="form-control {{ $errors->has('date_relance') ? 'is-invalid' : '' }} " name="date_relance" value="{{ date('Y-m-d') }}" placeholder="Date de relance" autofocus>
-                @if ($errors->has('date_relance'))
-                    <div class="help-block text-danger font-italic"></div>
-                @endif
-        </div>
+
 
 
             <div class="form-group col-md-3">
@@ -114,13 +100,13 @@
                         <div class="form-check">
                                   <input class="form-check-input" type="radio" name="post_type" id="post" value="post" checked>
                                   <label class="form-check-label" for="exampleRadios1">
-                                   Open
+                                   Post
                                   </label>
                         </div>
                         <div class="form-check">
                                   <input class="form-check-input" type="radio" name="post_type" id="video" value="video">
                                   <label class="form-check-label" for="exampleRadios2">
-                                    Close
+                                    Video
                                   </label>
                         </div>
                         @if ($errors->has('post_type'))

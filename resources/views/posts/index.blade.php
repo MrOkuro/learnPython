@@ -30,8 +30,9 @@
 			  <img class="card-img" src="{{url('images', 'image1.png') }}" style="width:894px;height:270px"; alt="Card image">
 			  <div class="card-img-overlay">
 			    <h5 class="card-title">{{ $post->title }} </h5>
-			    <p class="card-text">{{ $post->title }}</p>
-			    <p class="card-text">Last updated 3 mins ago</p>
+			    <p class="card-text">{{ $post->content }}</p>
+			    <p class="card-text">{{ $post->price }}</p>
+			    <p class="card-text">{{ $post->link_video }}</p>
 			    <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir la vidéo') </a>
 			  </div>
 		</div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Requests\PostRequest;
+use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Admin\Post;
 use App\Http\Controllers\Admin\Media;
 use App\Http\Controllers\Admin\Categorie;
@@ -28,12 +28,12 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-        dd('test');
+        //dd('test');
         $post = new Post;
         //$post->post_type = $request->post_type;
         $post->duration = $request->duration;
         $post->title = $request->title;
-        $post->date = $request->date;
+        //$post->date = $request->date;
         $post->price = $request->price;
         $post->content = $request->content;
         $post->link_video = $request->link_video;
@@ -47,7 +47,7 @@ class PostsController extends Controller
         {
 
             // Save image
-             $path = Storage::disk('images')->put('', $request->file('image'));
+            //$path = Storage::disk('images')->put('learnPython\public\images', $request->file('image'));
 
             //$media = new Media;
             //$post->media_id = $media->id;

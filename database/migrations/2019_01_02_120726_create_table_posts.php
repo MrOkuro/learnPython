@@ -19,11 +19,12 @@ class CreateTablePosts extends Migration
             $table->enum('post_type',['video', 'post'])->nullable();
             $table->string('title')->nullable();
             $table->smallinteger('duration')->nullable();
-            $table->datetime('date')->nullable();
+            //$table->datetime('date')->nullable();
             $table->float('price')->default($value = '0')->nullable();
             $table->text('content')->nullable();
             $table->enum('statut',['open', 'close'])->nullable();
             $table->string('link_video')->nullable();
+            $table->timestamps();
         });
 
 

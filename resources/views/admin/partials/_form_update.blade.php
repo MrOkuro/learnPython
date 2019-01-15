@@ -1,4 +1,4 @@
-<form class="form-horizontal monFormulaire" method="POST" action="{{ route('post.update', $post->id) }}">
+<form class="form-horizontal" method="POST" action="{{ route('post.update', $post->id) }}">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
     
@@ -42,12 +42,14 @@
                             </div> 
 
                             <div class="col-md-2">
-                                    <label for="total_ht" class="control-label font-weight-bold">@lang('Date')</label>
-                                    <input id="total_ht" type="text" class="form-control " name="total_ht" value="{{ (!empty($operation->total_ht)) ? $operation->total_ht : old('total_ht') }}" placeholder="" autofocus>
-                                    @if ($errors->has('total_ht'))
+                                    <label for="link_video" class="control-label font-weight-bold">@lang('Lien vidéo')</label>
+                                    <input id="link_video" type="text" class="form-control " name="link_video" value="{{ (!empty($post->link_video)) ? $post->link_video : old('link_video') }}" placeholder="" autofocus>
+                                    @if ($errors->has('link_video'))
                                         <div class="help-block text-danger font-italic"></div>
                                     @endif
-                            </div> 
+                            </div>
+
+
 
 
 
@@ -65,7 +67,7 @@
             <div class="form-group">
                     <div class="col-md-8 col-md-offset-4">
                             <button type="submit" class="btn btn-danger">
-                                @lang("Modifier l'opération")
+                                @lang("Modifier le post")
                             </button>                
                     </div>
             </div>

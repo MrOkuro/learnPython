@@ -59,6 +59,7 @@
             <tr>
                     <th scope="col" class="col-auto small">@lang('titre')</th>
                      <th scope="col" class="col-auto small">@lang('durée')</th>
+                     <th scope="col" class="col-auto small">@lang('Type de post')</th>
                      <th scope="col" class="col-auto small">@lang('date')</th>
                      <th scope="col" class="col-auto small">@lang('prix')</th>  
                      <th scope="col" class="col-auto small">@lang('Contenu')</th>
@@ -71,15 +72,16 @@
             @foreach ($posts as $post)   
               <tr>
                 <td>{{ $post->title }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $post->duration }}</td>
+                <td>{{ $post->post_type }}</td>
+                <td>{{ $post->created_at }}</td>
+                <td>{{ $post->price }}</td>
+                <td>{{ $post->content }}</td>
+                <td>{{ $post->statut }}</td>
+                <td>{{ $post->link_video }}</td>
                 <td> 
                     <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">
-                                @lang('Modifier opération')
+                                @lang('Modifier post')
                             </button></td>
                 <td>supprimer</td>
                 

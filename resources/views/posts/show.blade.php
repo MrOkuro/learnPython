@@ -47,15 +47,16 @@
 
 
 
-		<div class="card bg-dark text-white text-center ">
-			   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mAGyQ5Rmz7o" style="width:600px;height:400px"; allowfullscreen></iframe>
-			  <div class="card-img-overlay">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			    <p class="card-text">Last updated 3 mins ago</p>
-			    <a class="btn btn-sm btn-success" href="" role="button">@lang('Revenir à la page précédente') </a>
-			  </div>
-		</div>
+        <div class="card bg-dark text-white text-center ">
+         <iframe width="560" height="315" src={{$post->link_video}} allowfullscreen></iframe>
+
+        <div class="card-img-overlay">
+          <h5 class="card-title">{{$post->title}} </h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+          <a class="btn btn-sm btn-success" href="" role="button">@lang('Revenir à la page précédente') </a>
+        </div>
+    </div>
 
 <br><br><br>
 
