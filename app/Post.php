@@ -17,8 +17,8 @@ class Post extends Model
     }
 
 
-    public function category()
+    public function categorie()
     {
-    	return $this->belongsTo(Category::class);
+    	return $this->belongsTo(Categorie::class);
     }
 }

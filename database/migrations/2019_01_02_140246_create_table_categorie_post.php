@@ -13,7 +13,7 @@ class CreateTableCategoriePost extends Migration
      */
     public function up()
     {
-         Schema::create('categorie_post', function (Blueprint $table) {
+         Schema::create('categorie_posts', function (Blueprint $table) {
              $table->smallinteger('post_id');
              $table->smallinteger('categorie_id');
 
@@ -31,6 +31,6 @@ class CreateTableCategoriePost extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie_post');
+        Schema::dropIfExists('categorie_posts');
     }
 }

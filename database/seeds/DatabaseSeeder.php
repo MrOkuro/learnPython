@@ -121,14 +121,14 @@ class DatabaseSeeder extends Seeder
 
 
 
-        DB::table('categorie_post')->insert([
+        DB::table('categorie_posts')->insert([
             'post_id' => 1,
             'categorie_id' => 1,
             
         ]);
 
 
-        DB::table('categorie_post')->insert([
+        DB::table('categorie_posts')->insert([
             'post_id' => 2,
             'categorie_id' => 2,
             

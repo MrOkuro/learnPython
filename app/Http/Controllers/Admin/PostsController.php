@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
-use App\Http\Controllers\Admin\Post;
-use App\Http\Controllers\Admin\Media;
+
+use App\Http\Controllers\Admin\CategoriePost;
 use App\Http\Controllers\Admin\Categorie;
+use App\Http\Controllers\Admin\Media;
+use App\Http\Controllers\Admin\Post;
+use App\Http\Requests\PostRequest;
+use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
@@ -30,24 +32,27 @@ class PostsController extends Controller
     {
         //dd('test');
         $post = new Post;
-        //$post->post_type = $request->post_type;
+        $post->post_type = $request->post_type;
         $post->duration = $request->duration;
         $post->title = $request->title;
         //$post->date = $request->date;
         $post->price = $request->price;
         $post->content = $request->content;
         $post->link_video = $request->link_video;
-        //$post->statut = $request->statut;
+        $post->statut = $request->statut;
         //
-        //$post->categorie_post->categorie_id = $request->categorie_id;
-        //$post->categorie_post->post_id = $request->post_id; 
+        $post->categoriepost->categorie_id = $request->categorie_id;
+        //$post->post_id = $request->post_id; 
         
 
         if($post->save() !== false)
         {
-
+            $categoriepost = New CategoriePost;
+            $categoriepost->post_id = $post->id;
+            //$categoriepost->categorie_id = $categorie->id;
             // Save image
             //$path = Storage::disk('images')->put('learnPython\public\images', $request->file('image'));
+            //Request::file('image')->move('images/datasheets', 'nom_personnalisé.jpg');
 
             //$media = new Media;
             //$post->media_id = $media->id;
