@@ -9,4 +9,11 @@ class Media extends Model
     protected $fillable = [
         'title', 'link_image',
     ];
+
+
+
+         public function post()
+    {
+        return $this->hasOne('App\Post');
+    }
 }

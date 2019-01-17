@@ -14,12 +14,14 @@ class CategoriePost extends Model
 
         public function categorie()
     {
-    	return $this->belongsTo(Categorie::class);
+    	//return $this->belongsTo(Categorie::class);
+        return $this->belongsTo('App\Http\Controllers\Admin\Categorie');
     }
 
 
         public function post()
     {
-    	return $this->belongsTo(Post::class);
+    	//return $this->belongsTo(Post::class);
+        return $this->belongsTo('App\Http\Controllers\Admin\Post');
     }
 }

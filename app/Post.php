@@ -19,6 +19,7 @@ class Post extends Model
 
     public function categorie()
     {
-    	return $this->belongsTo(Categorie::class);
+    	//return $this->belongsTo(Categorie::class);
+        return $this->hasOne('App\Categorie');
     }
 }
