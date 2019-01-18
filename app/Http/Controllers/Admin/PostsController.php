@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\Media;
 use App\Http\Controllers\Admin\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -34,30 +36,27 @@ class PostsController extends Controller
         $post = new Post;
         $post->post_type = $request->post_type;
         $post->duration = $request->duration;
-        $post->title = $request->title;
-        //$post->date = $request->date;
+        $post->title = $request->title;        
         $post->price = $request->price;
         $post->content = $request->content;
         $post->link_video = $request->link_video;
-        $post->statut = $request->statut;
-        //
-        $post->categoriepost->categorie_id = $request->categorie_id;
-        //$post->post_id = $request->post_id; 
-        
-
+        $post->statut = $request->statut;        
         if($post->save() !== false)
         {
             $categoriepost = New CategoriePost;
             $categoriepost->post_id = $post->id;
-            //$categoriepost->categorie_id = $categorie->id;
+            $categoriepost->categorie_id = $request->categorie_id;
+            $categoriepost->save();   
+            
             // Save image
-            //$path = Storage::disk('images')->put('learnPython\public\images', $request->file('image'));
-            //Request::file('image')->move('images/datasheets', 'nom_personnalisé.jpg');
+            //$path = Storage::disk('images')->put('\public\images', $request->file('file.jpg'));
+            $path = Storage::putFileAs('images', new File('/images'), 'public' );
+            //Request::file('image')->move('images/datasheets', 'file.jpg');
 
-            //$media = new Media;
-            //$post->media_id = $media->id;
-            //$media->title = $media_title;
-            //$media->link_image = $path;
+            $media = new Media;            
+            $media->title_image = $request->title_image;
+            $media->link_image = $path;
+            $media->save();
         }
 
         return redirect(url()->previous());
@@ -87,10 +86,12 @@ class PostsController extends Controller
     }
 
 
-
-    /*public function show($id)
+    public function delete($id)
     {
-    	$post = Post::find($id);
-    	return view('posts.show', compact(['post']));
-    } */
+        $post = Post::find($id);
+        $post->delete();
+        return view('admin.index');
+    }
+
+
 }

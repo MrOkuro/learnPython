@@ -15,7 +15,7 @@ class CreateTableMedias extends Migration
     {
         Schema::create('medias', function (Blueprint $table){
             $table->increments('id');            
-            $table->string('title',100);
+            $table->string('title_image',100);
             //$table->integer('dimension');
             $table->string('link_image');
 

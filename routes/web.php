@@ -48,6 +48,7 @@ Route::get('/admin/create', 'Admin\PostsController@create')->name('post.create')
 Route::post('/admin/store', 'Admin\PostsController@store')->name('post.store');
 Route::put('/admin/{post}', 'Admin\PostsController@update')->name('post.update');
 Route::get('/admin/form/update/{id}','Admin\PostsController@form_update')->name('post.form_update');
+Route::delete('/admin/{post}', 'Admin\PostsController@delete')->name('post.delete');
 
 
 //Route pour les posts

@@ -13,12 +13,13 @@ class Post extends Model
 
      public function media()
     {
-        return $this->hasOne('App\Media');
+        return $this->hasOne('App\Http\Controllers\Admin\Media');
     }
 
 
     public function categoriepost()
     {
-    	return $this->belongsTo(CategoriePost::class);
+    	//return $this->belongsTo(CategoriePost::class);
+       return $this->belongsTo('App\Http\Controllers\Admin\CategoriePost'); 
     }
 }

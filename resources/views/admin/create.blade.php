@@ -51,11 +51,7 @@
                     <div class="help-block text-danger font-italic"></div>
                 @endif
             </div>
-
-            <div class="col-md-3">
-                        <label for="avatar">Choix image:</label>
-                        <input type="file" id="" name="" accept="image/png, image/jpeg">
-            </div>           
+       
         
 
 
@@ -114,10 +110,23 @@
                         @endif
             </div>
 
+</div> 
 
+<div class="form-row form-group">
 
+                <div class="col-md-3">
+                <label for="title_image" class="control-label font-weight-bold">@lang('Nom image')</label>
+                <input id="title_image" type="text" class="form-control {{ $errors->has('title_image') ? 'is-invalid' : '' }} " name="title_image" value="{{ old('title_image') }}" placeholder="image" autofocus>
+                @if ($errors->has('title_image'))
+                    <div class="help-block text-danger font-italic"></div>
+                @endif
+            </div>   
 
-</div>         
+            <div class="col-md-3">
+                        <label for="avatar">Choix image:</label>
+                        <input type="file" id="" name="" accept="image/png, image/jpeg">
+            </div>
+</div>        
       <div class="form-group">
             <div class="col-md-8 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">

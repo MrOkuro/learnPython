@@ -69,7 +69,7 @@
                         @endguest
                     </ul>
                 </div>
-
+<!--affichage message succès -->
     @if(session()->has('alert'))
                         <div class="container py-1">
                             <div class="alert alert-{!! session('alert')['class'] !!} alert-dismissible fade show" role="alert">

@@ -64,12 +64,14 @@
                      <th scope="col" class="col-auto small">@lang('prix')</th>  
                      <th scope="col" class="col-auto small">@lang('Contenu')</th>
                      <th scope="col" class="col-auto small">@lang('statut')</th>
+                     <th scope="col" class="col-auto small">@lang('catégories')</th>
                      <th scope="col" class="col-auto small">@lang('Lien vidéo')</th>                   
                      
                      
             </tr>
             <tbody>
-            @foreach ($posts as $post)   
+            @foreach ($posts as $post)  
+
               <tr>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->duration }}</td>
@@ -78,12 +80,23 @@
                 <td>{{ $post->price }}</td>
                 <td>{{ $post->content }}</td>
                 <td>{{ $post->statut }}</td>
+                <td></td>
                 <td>{{ $post->link_video }}</td>
                 <td> 
                     <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">
                                 @lang('Modifier post')
-                            </button></td>
-                <td>supprimer</td>
+                    </button></td>
+                <td>
+                    <form method="POST" action="{{ route('post.delete', $post->id) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit" class="btn btn-danger"> supprimer </button>
+
+                    </form>
+                        
+                
+
+                </td>
                 
                                 
               </tr>

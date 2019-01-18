@@ -49,7 +49,19 @@
                                     @endif
                             </div>
 
-
+                            
+        <div class="col-md-3">
+            <label for="categorie_id" class="control-label font-weight-bold">@lang('Catégories')</label>
+            <select id="categorie_id" class="form-control {{ $errors->has('categorie_id') ? 'is-invalid' : '' }}" name="categorie_id">
+                <option value=""> Liste catégories </option>
+                @foreach ($categories as $categorie)
+                    <option value="{{ $categorie->id }}" {{ (old('categorie_id') == $categorie->id)? 'selected' : '' }} > {{ $categorie->name}} </option>
+                @endforeach 
+            </select>        
+            @if ($errors->has('categorie_id'))
+                <div class="help-block text-danger font-italic"></div>
+            @endif
+        </div>
 
 
 

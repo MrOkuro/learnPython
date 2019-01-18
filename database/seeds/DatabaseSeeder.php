@@ -32,12 +32,12 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('medias')->insert([
-            'title' => 'image1.jpg',
+            'title_image' => 'image1.jpg',
             'link_image' => 'C/O https://placeholder.com/',
         ]);
 
         DB::table('medias')->insert([
-            'title' => 'image2.jpg',
+            'title_image' => 'image2.jpg',
             'link_image' => 'C/O https://placeholder.com/',
         ]);
 
