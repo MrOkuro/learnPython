@@ -9,7 +9,7 @@
 
 @include('layouts.partials._header')
 
-
+<!--
 		<div class="form-row form-group">
 
 					<div class="card bg-dark text-white text-center ">
@@ -22,7 +22,7 @@
 						  </div>
 					</div>
 
-			<br><br><br>
+			<br><br><br>-->
 
 
 			 @foreach ($posts as $post)

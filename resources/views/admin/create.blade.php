@@ -75,13 +75,13 @@
             <div class="form-group col-md-3">
                         <label for="statut" class="control-label font-weight-bold">@lang('Statut')</label>
                         <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="statut" id="open" value="open" checked>
+                                  <input class="form-check-input" type="checkbox" name="statut" id="open" value="open" >
                                   <label class="form-check-label" for="exampleRadios1">
                                    Open
                                   </label>
                         </div>
                         <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="statut" id="close" value="close">
+                                  <input class="form-check-input" type="checkbox" name="statut" id="close" value="close">
                                   <label class="form-check-label" for="exampleRadios2">
                                     Close
                                   </label>
@@ -94,13 +94,13 @@
             <div class="form-group col-md-3">
                         <label for="statut" class="control-label font-weight-bold">@lang('Post Type')</label>
                         <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="post_type" id="post" value="post" checked>
+                                  <input class="form-check-input" type="checkbox" name="post_type" id="post" value="post" >
                                   <label class="form-check-label" for="exampleRadios1">
                                    Post
                                   </label>
                         </div>
                         <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="post_type" id="video" value="video">
+                                  <input class="form-check-input" type="checkbox" name="post_type" id="video" value="video">
                                   <label class="form-check-label" for="exampleRadios2">
                                     Video
                                   </label>

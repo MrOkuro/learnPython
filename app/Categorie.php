@@ -10,9 +10,9 @@ class Categorie extends Model
         'parent_id', 'name', 
     ];
 
-    public function post()
+    public function categoriepost()
     {
-    	//return $this->hasMany(Post::class);
-    	 return $this->hasMany('App\Post');
+        //return $this->belongsTo(CategoriePost::class);
+       return $this->hasOne('App\CategoriePost'); 
     }
 }

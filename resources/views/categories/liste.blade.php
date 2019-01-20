@@ -5,7 +5,7 @@
         
 
 
-        <h1 class="text-left">@lang('Liste des posts')</h1> <br>
+        <h1 class="text-left">@lang('Liste des posts') {{ $categories->name }}</h1> <br>
 
 
 
@@ -29,7 +29,6 @@
             </thead>
 </table> 
 
-<!--
  <table class="table table-bordered table-hover table-sm">
           <thead class="thead-dark">
             <tr>
@@ -37,16 +36,17 @@
             </tr>
             <tbody>
             @foreach ($posts as $post)   
+             {{dd($post)}}
               <tr>
-                <td>{{ $post->title }}</td>
-                <td> <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir la vidéo') </a> </td>
+                <td>{{ $post->title }}  vfhbrfb</td>
+                <td> <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir le poste') </a> </td>
               </tr>
             @endforeach
 
             </tbody>                
             </thead>
 </table> 
--->
+
        
 </div>
 @include('layouts.partials._footer')

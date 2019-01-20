@@ -16,7 +16,11 @@ class PostsController extends Controller
 {
     public function index()
     {
-    	$posts = Post::all();
+    	//$posts = Post::all();
+        $posts = Post::with(['categoriepost'])->paginate(5);
+        //$categories = Categorie::whereNotNull('parent_id')->with(['categoriepost'])->get();
+        
+        //dd($categories);
     	return view('admin.index',compact(['posts']));
     }
 
@@ -50,15 +54,16 @@ class PostsController extends Controller
             
             // Save image
             //$path = Storage::disk('images')->put('\public\images', $request->file('file.jpg'));
-            $path = Storage::putFileAs('images', new File('/images'), 'public' );
+            //$path = Storage::putFileAs('images', new File('/images'), 'public' );
             //Request::file('image')->move('images/datasheets', 'file.jpg');
-
-            $media = new Media;            
-            $media->title_image = $request->title_image;
-            $media->link_image = $path;
-            $media->save();
+            //$path = $request->file('path')->storeAs('images');
+        
+            //$media = new Media;            
+            //$media->title_image = $request->title_image;
+            //$media->link_image = $path;
+            //$media->save();
         }
-
+        $request->session()->flash('alert', ['class'=>'success','message'=>'Post crée!!']);
         return redirect(url()->previous());
     }
 

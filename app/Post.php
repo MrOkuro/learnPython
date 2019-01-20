@@ -17,9 +17,9 @@ class Post extends Model
     }
 
 
-    public function categorie()
+        public function categoriepost()
     {
-    	//return $this->belongsTo(Categorie::class);
-        return $this->hasOne('App\Categorie');
+        //return $this->belongsTo(CategoriePost::class);
+        return $this->hasOne('App\CategoriePost');
     }
 }

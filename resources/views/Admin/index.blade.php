@@ -70,17 +70,18 @@
                      
             </tr>
             <tbody>
+
             @foreach ($posts as $post)  
 
               <tr>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->duration }}</td>
                 <td>{{ $post->post_type }}</td>
-                <td>{{ $post->created_at }}</td>
+                <td>{{ date("d/m/Y",strtotime($post->created_at)) }}</td>
                 <td>{{ $post->price }}</td>
                 <td>{{ $post->content }}</td>
                 <td>{{ $post->statut }}</td>
-                <td></td>
+                <td> </td>
                 <td>{{ $post->link_video }}</td>
                 <td> 
                     <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">
@@ -106,6 +107,9 @@
             </thead>
 </table> 
 
+  <div class="float-right">
+    {{ $posts->links() }}
+  </div>
 
 <section id="form_update" class="contentcard">    
 
