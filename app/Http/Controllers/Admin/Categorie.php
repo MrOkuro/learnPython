@@ -13,6 +13,6 @@ class Categorie extends Model
     public function categoriepost()
     {
     	//return $this->belongsTo(CategoriePost::class);
-    	return $this->belongsTo('App\Http\Controllers\Admin\CategoriePost');
+    	return $this->hasOne('App\Http\Controllers\Admin\CategoriePost');
     }
 }

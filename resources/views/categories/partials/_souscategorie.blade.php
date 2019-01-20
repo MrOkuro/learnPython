@@ -9,8 +9,10 @@
 				    </div>
 				    <div class="card-footer">
 				      <small class="text-muted">Last updated 3 mins ago</small>
-					     <button type="button" class="btn btn-primary"  onclick="affiche_souscategorie({{"'".route('categorie.souscategorie',$categorie->id)."'"}});"> @lang('Afficher liste des cours de cette catégorie')
-	                    </button>
+					    <a href="{{ route('categorie.liste', [$categorie->id] ) }}"> 
+					    	<button type="button" class="btn btn-primary"> @lang('Afficher liste des cours de cette catégorie') 
+	                    	</button> 
+	                	</a>
 				    </div>
 		  </div>
 @endforeach	
