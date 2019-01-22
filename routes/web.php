@@ -54,6 +54,7 @@ Route::delete('/admin/{post}', 'Admin\PostsController@delete')->name('post.delet
 //Route pour les posts
 Route::get('/post', 'PostsController@index')->name('post.index');
 Route::get('/post/{post}/','PostsController@show')->name('post.show');
+Route::post('/post/search', 'PostsController@index')->name('post.index.search');
 
 
 //route pour les catégories

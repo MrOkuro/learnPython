@@ -11,8 +11,8 @@
 		      </div>
 		      
 		      <div class="col-auto">
-		        <form class="form-inline" method="POST" action="">
-		          
+		        <form class="form-inline" method="POST" action="{{ route('post.index.search') }}">
+		          {{ csrf_field() }}
 		          <div class="form-group mx-sm-3 mb-2">
 		            <input id="search" type="text" class="form-control" name="search" value="" placeholder="Recherche" autofocus>
 		          </div>
