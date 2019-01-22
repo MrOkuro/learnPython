@@ -77,7 +77,7 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->duration }}</td>
                 <td>{{ $post->post_type }}</td>
-                <td>{{ date("d/m/Y",strtotime($post->created_at)) }}</td>
+                <td>{{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }} </td>
                 <td>{{ $post->price }}</td>
                 <td>{{ $post->content }}</td>
                 <td>{{ $post->statut }}</td>

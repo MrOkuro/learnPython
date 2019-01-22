@@ -52,8 +52,7 @@
 
         <div class="card-img-overlay">
           <h5 class="card-title">{{$post->title}} </h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text">Last updated 3 mins ago</p>
+          <p class="card-text">{{$post->content}}</p>          
           <a class="btn btn-sm btn-success" href="" role="button">@lang('Revenir à la page précédente') </a>
         </div>
     </div>
