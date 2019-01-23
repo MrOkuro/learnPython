@@ -17,7 +17,8 @@ class PostsController extends Controller
     public function index()
     {
     	//$posts = Post::all();
-        $posts = Post::with(['categoriepost'])->paginate(5);
+        $posts = Post::with(['categoriepost.categorie'])->paginate(5);
+        //dd($posts);
         //$categories = Categorie::whereNotNull('parent_id')->with(['categoriepost'])->get();
         
         //dd($categories);

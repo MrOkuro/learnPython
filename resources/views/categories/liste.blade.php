@@ -4,30 +4,9 @@
 <div class="container">
         
 
-
-        <h1 class="text-left">@lang('Liste des posts') {{ $categories->name }}</h1> <br>
-
-
-
- <table class="table table-bordered table-hover table-sm">
-          <thead class="thead-dark">
-            <tr>
-                    <th scope="col" class="col-auto small">@lang('titre')</th>                  
-                     
-            </tr>
-            <tbody>
-               
-              <tr>
-                <td>bblablatittre</td>               
-                <td>voir</td>           
-                
-                                
-              </tr>
-
-
-            </tbody>                
-            </thead>
-</table> 
+        @foreach ($posts as $post)   
+        <h1 class="text-left">@lang('Liste des posts de la catégorie') {{ $post->categoriepost->categorie->name }} </h1> <br>
+        @endforeach
 
  <table class="table table-bordered table-hover table-sm">
           <thead class="thead-dark">
@@ -36,9 +15,9 @@
             </tr>
             <tbody>
             @foreach ($posts as $post)   
-             {{dd($post)}}
+             
               <tr>
-                <td>{{ $post->title }}  vfhbrfb</td>
+                <td>{{ $post->title }}  </td>
                 <td> <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir le poste') </a> </td>
               </tr>
             @endforeach

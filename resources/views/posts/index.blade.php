@@ -22,8 +22,7 @@
 						  </div>
 					</div>
 
-			<br><br><br>-->
-
+			<br><br><br>-->	
 
 			 @foreach ($posts as $post)
 					<div class="card bg-dark text-white text-center ">

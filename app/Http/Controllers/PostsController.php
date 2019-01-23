@@ -18,7 +18,7 @@ class PostsController extends Controller
             
         }
         $posts->select('posts.*');
-        dd($posts);
+        //dd($posts);
 
         return $posts;
     }
@@ -35,7 +35,7 @@ class PostsController extends Controller
         {
             $posts = new Post;
             $posts = self::search($request,$posts);
-            $posts = Post::paginate(3);
+            $posts = $posts->paginate(3);
         }
 
 

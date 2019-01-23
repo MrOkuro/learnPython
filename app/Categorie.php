@@ -13,6 +13,6 @@ class Categorie extends Model
     public function categoriepost()
     {
         //return $this->belongsTo(CategoriePost::class);
-       return $this->hasOne('App\CategoriePost'); 
+       return $this->hasMany('App\CategoriePost');
     }
 }

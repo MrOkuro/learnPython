@@ -29,15 +29,17 @@ class CategoriesController extends Controller
         return view('categories.partials._souscategorie', compact('categories'));
     }
 
-
-
     public function showliste($id)
     {
-        //$posts = Post::where('categorie_id','=',$categorie_id)->with(['categorie_post'])->get();
-        //$categories = Categorie::where('parent_id',"=",$id)->get();
-        $categories = Categorie::find($id);
-        $posts = Post::where('id','=',$id)->with(['categoriepost'])->get();
-        //dd($posts);
-        return view('categories.liste', compact('posts','categories'));
+        $categorie = Categorie::where('id','=',$id)->with(['categoriepost.post'])->first();
+        //dump($categorie);
+        $posts = array();
+        foreach($categorie->categoriepost as $categoriepost)
+        {
+            $posts[] = $categoriepost->post;
+        }
+        //dump($posts);
+        //dd('test');
+        return view('categories.liste', compact('$categorie','posts'));
     }
 }

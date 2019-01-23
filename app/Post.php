@@ -10,14 +10,12 @@ class Post extends Model
         'media_id', 'post_type', 'title','duration','date','price','content','statut','link_video'
     ];
 
-
-     public function media()
+    public function media()
     {
         return $this->hasOne('App\Media');
     }
 
-
-        public function categoriepost()
+    public function categoriepost()
     {
         //return $this->belongsTo(CategoriePost::class);
         return $this->hasOne('App\CategoriePost');

@@ -24,41 +24,6 @@
             <tr>
                     <th scope="col" class="col-auto small">@lang('titre')</th>
                      <th scope="col" class="col-auto small">@lang('durée')</th>
-                     <th scope="col" class="col-auto small">@lang('date')</th>
-                     <th scope="col" class="col-auto small">@lang('prix')</th>  
-                     <th scope="col" class="col-auto small">@lang('Contenu')</th>
-                     <th scope="col" class="col-auto small">@lang('statut')</th>
-                     <th scope="col" class="col-auto small">@lang('Lien vidéo')</th>                   
-                     
-                     
-            </tr>
-            <tbody>
-               
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>modifier</td>
-                <td>supprimer</td>
-                
-                                
-              </tr>
-
-
-            </tbody>                
-            </thead>
-</table> 
-
-
- <table class="table table-bordered table-hover table-sm">
-          <thead class="thead-dark">
-            <tr>
-                    <th scope="col" class="col-auto small">@lang('titre')</th>
-                     <th scope="col" class="col-auto small">@lang('durée')</th>
                      <th scope="col" class="col-auto small">@lang('Type de post')</th>
                      <th scope="col" class="col-auto small">@lang('date')</th>
                      <th scope="col" class="col-auto small">@lang('prix')</th>  
@@ -81,7 +46,7 @@
                 <td>{{ $post->price }}</td>
                 <td>{{ $post->content }}</td>
                 <td>{{ $post->statut }}</td>
-                <td> </td>
+                <td> {{ $post->categoriepost->categorie->name }} </td>
                 <td>{{ $post->link_video }}</td>
                 <td> 
                     <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">
