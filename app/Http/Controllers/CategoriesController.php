@@ -40,6 +40,6 @@ class CategoriesController extends Controller
         }
         //dump($posts);
         //dd('test');
-        return view('categories.liste', compact('$categorie','posts'));
+        return view('categories.liste', compact('categorie','posts'));
     }
 }

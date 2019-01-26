@@ -13,11 +13,11 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-        //if(auth()->check())
-        //{
+        if(auth()->check())
+        {
             return true;
-        //}
-        //return false; 
+        }
+        return false; 
     }
 
     /**
@@ -28,7 +28,9 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'link_video' => 'required',
+            'categorie_id' => 'required',
         ];
     }
 }

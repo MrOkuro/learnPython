@@ -71,16 +71,15 @@
                 </div>
 <!--affichage message succès -->
     @if(session()->has('alert'))
-                        <div class="container py-1">
-                            <div class="alert alert-{!! session('alert')['class'] !!} alert-dismissible fade show" role="alert">
-                                {!! session('alert')['message'] !!}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                        </div>
-    @endif
+        <div class="container py-1">
+            <div class="alert alert-{!! session('alert')['class'] !!} alert-dismissible fade show" role="alert">
+                {!! session('alert')['message'] !!}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+        </div>
+    @endif
         </nav>
 
         @yield('content')

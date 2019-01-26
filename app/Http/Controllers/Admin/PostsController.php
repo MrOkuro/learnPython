@@ -63,8 +63,9 @@ class PostsController extends Controller
             //$media->title_image = $request->title_image;
             //$media->link_image = $path;
             //$media->save();
+            $request->session()->flash('alert', ['class'=>'success','message'=>'Post crée!!']);
         }
-        $request->session()->flash('alert', ['class'=>'success','message'=>'Post crée!!']);
+        //$request->session()->flash('alert', ['class'=>'success','message'=>'Post crée!!']);
         return redirect(url()->previous());
     }
 

@@ -25,6 +25,10 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
+
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
 	// Registration Routes...
 	$this->get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 	$this->post('/register', 'Auth\RegisterController@register');
