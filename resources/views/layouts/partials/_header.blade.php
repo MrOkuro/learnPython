@@ -1,6 +1,6 @@
 	<div class="row">
 		      <div class="col-auto mr-auto">
-		        <div class="btn">
+		        <div class="btn btn-group">
 		          <a class="btn btn-sm btn-primary" href="{{ route('post.index') }}" role="button">@lang('Home')</a> 
 		          <a class="btn btn-sm btn-primary" href="{{ route('categorie.index') }}" role="button">@lang('Catégorie')</a> 
 		          <a class="btn btn-sm btn-primary" href="{{ route('categorie.index') }}" role="button">@lang('Initiation')</a> 

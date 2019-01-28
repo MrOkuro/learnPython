@@ -31,6 +31,9 @@ class CategoriesController extends Controller
 
     public function showliste($id)
     {
+        //dd(Categorie::find($id)->posts);
+        $categories = Categorie::find($id)->posts;
+        /*
         $categorie = Categorie::where('id','=',$id)->with(['categoriepost.post'])->first();
         //dump($categorie);
         $posts = array();
@@ -39,7 +42,9 @@ class CategoriesController extends Controller
             $posts[] = $categoriepost->post;
         }
         //dump($posts);
-        //dd('test');
-        return view('categories.liste', compact('$categorie','posts'));
+        //dd('test');*/
+        return view('categories.liste', compact('categories'));
+
+        
     }
 }

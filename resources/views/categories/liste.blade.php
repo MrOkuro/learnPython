@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
         
-
-        @foreach ($posts as $post)   
-        <h1 class="text-left">@lang('Liste des posts de la catégorie') {{ $post->categoriepost->categorie->name }} </h1> <br>
-        @endforeach
+ 
+        <h1 class="text-left">@lang('Liste des posts de la catégorie') </h1> <br>
+       
 
  <table class="table table-bordered table-hover table-sm">
           <thead class="thead-dark">
@@ -14,10 +13,10 @@
                     <th scope="col" class="col-auto small">@lang('titre')</th>     
             </tr>
             <tbody>
-            @foreach ($posts as $post)   
+            @foreach ($categories->posts as $post)   
              
               <tr>
-                <td>{{ $post->title }}  </td>
+                <td>{{ dd($post->title) }}  </td>
                 <td> <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir le poste') </a> </td>
               </tr>
             @endforeach
