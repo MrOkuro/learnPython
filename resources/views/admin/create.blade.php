@@ -4,7 +4,7 @@
 
 
 <div class="container py-1">
-    <form class="form-horizontal" method="POST" action="{{ route('post.store') }}">
+    <form class="form-horizontal" method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data" >
         {{ csrf_field() }}
 
 

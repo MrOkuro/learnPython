@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,7 @@ class Media extends Model
 
     public function post()
     {
-        return $this->hasOne('App\Http\Controllers\Admin\Post');
+        return $this->hasOne(post::class); 
+        //return $this->hasOne('App\Http\Controllers\Admin\Post');
     }
 }

@@ -28,7 +28,7 @@ class CreateTablePosts extends Migration
         });
 
 
-         Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->foreign('media_id')->references('id')->on('medias');           
         });
     }

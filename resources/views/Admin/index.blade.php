@@ -46,7 +46,11 @@
                 <td>{{ $post->price }}</td>
                 <td>{{ $post->content }}</td>
                 <td>{{ $post->statut }}</td>
-                <td>  </td>
+                <td> 
+                  @foreach($post->categories as $category)
+                    {{ $category->name}}
+                  @endforeach 
+                 </td>
                 <td>{{ $post->link_video }}</td>
                 <td> 
                     <button type="button" class="btn btn-primary"  onclick="affiche_form_update({{"'".route('post.form_update',$post->id)."'"}});">

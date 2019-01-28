@@ -10,8 +10,9 @@
 				    <div class="card-footer">
 				      <small class="text-muted">Last updated 3 mins ago</small>
 					    <a href="{{ route('categorie.liste', [$categorie->id] ) }}"> 
-					    	<button type="button" class="btn btn-primary"> @lang('Afficher liste des cours de cette catégorie') 
-	                    	</button> 
+					    	<button type="button" class="btn btn-primary"> @lang('Afficher liste cours') 
+								{{ $categorie->name }}
+								</button> 
 	                	</a>
 				    </div>
 		  </div>

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Http\Controllers\Admin\CategoriePost;
-use App\Http\Controllers\Admin\Categorie;
-use App\Http\Controllers\Admin\Media;
-use App\Http\Controllers\Admin\Post;
+use App\Admin\CategoriePost;
+use App\Admin\Categorie;
+use App\Admin\Media;
+use App\Admin\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
     	//$posts = Post::all();
-        $posts = Post::with(['categoriepost.categorie'])->paginate(5);
+        $posts = Post::paginate(5);
         //dd($posts);
         //$categories = Categorie::whereNotNull('parent_id')->with(['categoriepost'])->get();
         
@@ -58,6 +58,8 @@ class PostsController extends Controller
             //$path = Storage::putFileAs('images', new File('/images'), 'public' );
             //Request::file('image')->move('images/datasheets', 'file.jpg');
             //$path = $request->file('path')->storeAs('images');
+
+            //$path = storeAs('public','mon_image.jpg');
         
             //$media = new Media;            
             //$media->title_image = $request->title_image;

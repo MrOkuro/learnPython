@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,10 +10,12 @@ class Post extends Model
         'media_id', 'post_type', 'title','duration','date','price','content','statut','link_video'
     ];
 
-    public function media()
+     public function media()
     {
-        return $this->hasOne('App\Media');
+        return $this->hasOne(Media::class); 
+        //return $this->hasOne('App\Admin\Media');
     }
+
 
     public function categories()
     {
