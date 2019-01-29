@@ -9,30 +9,17 @@
 
 @include('layouts.partials._header')
 
-<!--
-		<div class="form-row form-group">
 
-					<div class="card bg-dark text-white text-center ">
-						  <img class="card-img" src="{{url('images', 'image1.png') }}" style="width:894px;height:270px"; alt="Card image">
-						  <div class="card-img-overlay">
-						    <h5 class="card-title">Card title Exemple</h5>
-						    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						    <p class="card-text">Last updated 3 mins ago</p>
-						    <a class="btn btn-sm btn-success" href="" role="button">@lang('Voir la vidéo') </a>
-						  </div>
-					</div>
-
-			<br><br><br>-->	
 
 			 @foreach ($posts as $post)
 					<div class="card bg-dark text-white text-center ">
-						  <img class="card-img" src="{{url('images', 'image1.png') }}" style="width:894px;height:270px"; alt="Card image">
+						  <img class="card-img" src="{{url('images', 'image1.jpg') }}" style="width:500px;height:300px"; alt="Card image">
 						  <div class="card-img-overlay">
 						  <p class="card-text">Catégorie:
 						        @foreach($post->categories as $category)
                     					{{ $category->name}}
                   				@endforeach </p>
-						    <h5 class="card-title"> Titre de la vidéo {{ $post->title }}  </h5>						    
+						    <h5 class="card-title"> Titre de la vidéo :{{ $post->title }}  </h5>						    
 						    <p class="card-text"> Prix de la vidéo: {{ $post->price }} €</p>						    
 						    <a class="btn btn-sm btn-success" href="{{ route('post.show', [$post->id] ) }}" role="button">@lang('Voir la vidéo') </a>
 						  </div>

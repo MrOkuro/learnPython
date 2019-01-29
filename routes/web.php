@@ -55,6 +55,9 @@ Route::get('/admin/form/update/{id}','Admin\PostsController@form_update')->name(
 Route::delete('/admin/{post}', 'Admin\PostsController@delete')->name('post.delete');
 
 
+//route page contact
+Route::get('/contact', 'PostsController@contact')->name('contact');
+
 //Route pour les posts
 Route::get('/post', 'PostsController@index')->name('post.index');
 Route::get('/post/{post}/','PostsController@show')->name('post.show');
@@ -66,3 +69,5 @@ Route::post('/post/search', 'PostsController@index')->name('post.index.search');
 Route::get('/categories/','CategoriesController@show')->name('categorie.index');
 Route::get('/categories/{id}','CategoriesController@showsouscategorie')->name('categorie.souscategorie');
 Route::get('/categories/{id}/liste','CategoriesController@showliste')->name('categorie.liste');
+
+
