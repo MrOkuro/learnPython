@@ -32,7 +32,7 @@ class CategoriesController extends Controller
     public function showliste($id)
     {
         //dd(Categorie::find($id)->posts);
-        $categories = Categorie::find($id)->posts;
+        $categorie = Categorie::find($id)->posts;
         /*
         $categorie = Categorie::where('id','=',$id)->with(['categoriepost.post'])->first();
         //dump($categorie);
@@ -43,7 +43,7 @@ class CategoriesController extends Controller
         }
         //dump($posts);
         //dd('test');*/
-        return view('categories.liste', compact('categories'));
+        return view('categories.liste', compact('categorie'));
 
         
     }
